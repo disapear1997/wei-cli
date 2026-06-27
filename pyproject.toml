@@ -1,6 +1,6 @@
 [project]
 name = "wei-cli"
-version = "0.0.1"
+version = "0.0.9"
 description = "Intent-driven CLI"
 readme = "README.md"
 requires-python = ">=3.10"

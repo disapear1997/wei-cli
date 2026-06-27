@@ -1,7 +1,13 @@
 import argparse
+from importlib.metadata import version
+
+from wei.intents.dev.register import register_dev
+from wei.intents.git.register import register_git
+
 
 
 def main():
+
     parser = argparse.ArgumentParser(
         prog="wei",
         description="Wei CLI"
@@ -10,7 +16,29 @@ def main():
     parser.add_argument(
         "--version",
         action="version",
-        version="wei-cli 0.0.1"
+        version=f"wei-cli {version('wei-cli')}"
     )
 
-    parser.parse_args()
+    # Root command
+    subparsers = parser.add_subparsers(
+        dest="command"
+    )
+
+    # Register first-level intents
+    register_dev(subparsers)
+    register_git(subparsers)
+
+    args = parser.parse_args()
+
+    # ------------------------------------------------------------------
+    # Dispatch (暫時保留)
+    # ------------------------------------------------------------------
+
+    if hasattr(args, "func"):
+        args.func(args)
+    else:
+        parser.print_help()
+
+
+if __name__ == "__main__":
+    main()
