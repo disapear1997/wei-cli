@@ -8,6 +8,25 @@ The core of **wei** is intentionally lightweight and depends only on the Python 
 
 ---
 
+
+
+# Example
+
+Enter the docker container.
+```bash
+
+wei docker enter
+
+```
+
+Sync the Remote Github Repository
+```bash
+
+wei git sync <commit message> 
+
+```
+
+
 # Installation
 
 ## Requirements
@@ -31,7 +50,7 @@ pipx ensurepath
 Install Wei from GitHub:
 
 ```bash
-pipx install git+https://github.com/strongco223/wei-cli.git
+pipx install git+https://github.com/disapear1997/wei-cli.git
 ```
 
 Verify the installation:
@@ -58,7 +77,7 @@ Restart your terminal.
 Install Wei:
 
 ```powershell
-pipx install git+https://github.com/strongco223/wei-cli.git
+pipx install git+https://github.com/disapear1997/wei-cli.git
 ```
 
 Verify the installation:
@@ -80,7 +99,7 @@ pipx upgrade wei-cli
 If Wei was installed directly from the GitHub repository, reinstall it:
 
 ```bash
-pipx reinstall git+https://github.com/strongco223/wei-cli.git
+pipx reinstall git+https://github.com/disapear1997/wei-cli.git
 ```
 
 ---
