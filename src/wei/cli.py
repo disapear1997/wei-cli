@@ -4,6 +4,7 @@ from importlib.metadata import version
 from wei.intents.dev.register import register_dev
 from wei.intents.git.register import register_git
 from wei.intents.docker.register import register_docker
+from wei.intents.doctor.register import register_doctor
 
 
 
@@ -30,6 +31,7 @@ def main():
     register_dev(subparsers)
     register_git(subparsers)
     register_docker(subparsers)
+    register_doctor(subparsers)
 
     args = parser.parse_args()
 
